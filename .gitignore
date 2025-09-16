@@ -1,0 +1,25 @@
+# Ignore raw TCGA downloads
+*.rda
+*.RData
+*.tar.gz
+*.gz
+*.bam
+*.bai
+*.fastq
+*.fq
+*.sam
+*.vcf
+
+# Ignore RStudio temporary files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Ignore large intermediate results
+data/raw/
+results/large/
+
+# Ignore temporary files
+*.tmp
+*.log
