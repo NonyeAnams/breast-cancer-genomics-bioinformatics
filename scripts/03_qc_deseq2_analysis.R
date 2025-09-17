@@ -19,7 +19,7 @@ library(RColorBrewer)
 # Step 2: Load Data
 # -------------------------------
 # Load counts and metadata
-counts <- read.csv("data/counts_sub_head20.csv", row.names = 1)
+counts <- readRDS("data/counts_sub.rds")
 coldata <- read.csv("data/coldata_br_ca.csv", row.names = 1)
 
 # Check alignment of samples
@@ -30,10 +30,10 @@ colnames(counts)
 rownames(coldata)
 
 # Fix sample naming mismatch (replace '-' with '.')
-rownames(coldata) <- gsub("-", ".", rownames(coldata))
+#rownames(coldata) <- gsub("-", ".", rownames(coldata))
 
 # Re-check alignment
-all(rownames(coldata) == colnames(counts))
+#all(rownames(coldata) == colnames(counts))
 
 # Make condition a factor with explicit order
 coldata$condition <- factor(coldata$condition, levels = c("Normal", "Tumor"))
