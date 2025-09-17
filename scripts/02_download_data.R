@@ -88,8 +88,11 @@ coldata <- data.frame(
 rownames(coldata) <- coldata$sample
 
 # ---- Step 9: Save outputs ----
-# Small preview of counts (20 rows)
+# counts 
 write.csv(head(counts_sub,20), "data/counts_sub_head20.csv", row.names = TRUE)
+
+saveRDS(counts_sub, "data/counts_sub.rds")
+write.csv(counts_sub, "data/counts_sub.csv", row.names = TRUE)
 
 # Metadata for selected subset
 meta_subset <- getResults(query_subset)
